@@ -6,28 +6,60 @@ body {
 }
 
 #main {
-  width: fit-content;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 10px;
-  background-color: #f0f0f0;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-family: "Open Sans", "Lucida Grande", "Arial", sans-serif;
-  margin-top: 20px;
+}
+
+.controls {
+  background-color: #e4e4e4;
+  padding: 10px;
+  text-align: center;
 }
 
 h1 {
   font-size: 24px;
-  margin: 0 0 10px;
+  font-weight: 300;
+  margin: 0 0 0 10px;
+}
+
+.glow {
+  color: purple;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ee318f, 0 0 40px #ee318f, 0 0 50px #ee318f, 0 0 60px #ee318f, 0 0 70px #ee318f;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ee318f, 0 0 40px #ee318f, 0 0 50px #ee318f, 0 0 60px #ee318f, 0 0 70px #ee318f;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
 }
 
 .container {
   overflow-x: scroll;
   overflow-y: hidden;
-  width: 660px;
+  width: 100%;
   height: 110px;
   white-space: nowrap;
-  margin: 10px;
+  position: absolute;
+  bottom: 0;
+  background-color: #f0f0f0;
 }
 
 .keyboard {
@@ -109,11 +141,12 @@ h1 {
 
 .settingsBar {
   padding-top: 8px;
-  font:
+  font: 14px;
+  /* font:
     14px "Open Sans",
     "Lucida Grande",
     "Arial",
-    sans-serif;
+    sans-serif; */
   position: relative;
   vertical-align: middle;
   width: 100%;
@@ -136,6 +169,7 @@ h1 {
 .right {
   width: 50%;
   position: absolute;
+  z-index: 1;
   right: 0;
   display: table-cell;
   vertical-align: middle;
