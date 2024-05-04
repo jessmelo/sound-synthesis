@@ -205,7 +205,6 @@ function playTone(freq) {
   } else {
     osc.type = type;
   }
-
   osc.frequency.value = freq;
   osc.start();
 
